@@ -1,3 +1,7 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
 
 .yap-theme-primary {
     background-color: #00BCD4 !important;
@@ -8,4 +12,10 @@
     color: #f1f1f1 !important;
 }
 
+i {
 
+}
+
+.angular-google-map-container {
+    height: 400px;
+}
