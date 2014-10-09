@@ -1,1 +1,1 @@
-var app = angular.module('YapApp', ['ngAria', 'ngAnimate', 'ngMaterial']);
+var app = angular.module('YapApp', ['ngRoute', 'ngAria', 'ngAnimate', 'ngMaterial']);
