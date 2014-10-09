@@ -1,5 +1,6 @@
 var gulp = require('gulp'),
-    livereload = require('gulp-livereload');
+    livereload = require('gulp-livereload'),
+    bower = require('gulp-bower');
 
 
 gulp.task('html', function () {
@@ -14,6 +15,9 @@ gulp.task('watch', function() {
 });
 
 
+gulp.task('bower', function() {
+    return bower()
+        .pipe(gulp.dest('lib/'))
+});
 
-
-gulp.task('default', ['html','watch']);
+gulp.task('default', ['bower','html','watch']);
