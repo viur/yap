@@ -62,7 +62,28 @@
 
     <leaflet center="center" width="320px" height="568px"></leaflet>
 
+    <material-content>
 
+        <material-list>
+
+            <material-item ng-repeat="item in todos">
+                <material-item-content>
+                    <div class="material-tile-left">
+                        <img ng-src="{{item.face}}" class="face" alt="{{item.category}}">
+                    </div>
+                    <div class="material-tile-content">
+                        <h3>{{item.what}}</h3>
+                        <h4>{{item.category}}</h4>
+                        <p>
+                            {{item.notes}}
+                        </p>
+                    </div>
+                </material-item-content>
+            </material-item>
+
+        </material-list>
+
+    </material-content>
 </div>
 
 </body>
