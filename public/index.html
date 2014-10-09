@@ -55,6 +55,29 @@
     </material-content>
 
     <google-map center="map.center" zoom="map.zoom"></google-map>
+
+    <material-content>
+
+        <material-list>
+
+            <material-item ng-repeat="item in todos">
+                <material-item-content>
+                    <div class="material-tile-left">
+                        <img ng-src="{{item.face}}" class="face" alt="{{item.category}}">
+                    </div>
+                    <div class="material-tile-content">
+                        <h3>{{item.what}}</h3>
+                        <h4>{{item.category}}</h4>
+                        <p>
+                            {{item.notes}}
+                        </p>
+                    </div>
+                </material-item-content>
+            </material-item>
+
+        </material-list>
+
+    </material-content>
 </div>
 
 </body>
