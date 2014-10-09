@@ -1,4 +1,4 @@
-app.controller('MainCtrl', ['$scope', 'geoService', function ($scope, geoService) {
+app.controller('MainCtrl', ['$scope', 'geoService', 'socket', function ($scope, geoService, socket) {
 
     $scope.center = {};
     geoService.getCurrentPosition().then(function (pos) {
@@ -16,6 +16,10 @@ app.controller('MainCtrl', ['$scope', 'geoService', function ($scope, geoService
 
     });
 
+    socket.on('init', function (data) {
+        $scope.name = data.name;
+        $scope.users = data.users;
+    });
 
 
 }]);

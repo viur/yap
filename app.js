@@ -1,6 +1,10 @@
 // set up ========================
-var express = require('express');
-var app = express(); 								// create our app w/ express
+var express = require('express'); // create our app w/ express
+var app = express();
+
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
+
 var mongoose = require('mongoose'); 					// mongoose for mongodb
 var logger = require('morgan'); 			// log requests to the console (express4)
 var bodyParser = require('body-parser'); 	// pull information from HTML POST (express4)
@@ -27,8 +31,9 @@ var debug = require('debug')('yap');
 
 // routes ======================
 require('./app/routes')(app, debug);
+require('./app/io')(io);
 
 // listen (start app with node server.js) ======================================
-var server = app.listen(8080, function () {
+var server = http.listen(8080, function () {
     debug('Express server listening on port ' + server.address().port);
 });
