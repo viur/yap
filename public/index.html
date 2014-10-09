@@ -1,16 +1,33 @@
 <!DOCTYPE html>
-<html ng-app>
+<html ng-app="YapApp">
 <head lang="en">
-    <script src="components/hammerjs/hammer.js"></script>
-    <script src="components/angular/angular.js"></script>
-    <script src="components/angular-animate/angular-animate.js"></script>
-    <script src="components/angular-aria/angular-aria.js"></script>
-    <script src="components/angular-material/angular-material.js"></script>
+
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=yes"/>
     <link rel="stylesheet" type="text/css" href="components/angular-material/angular-material.css">
+
+
+    <script src="components/angular/angular.js"></script>
+    <script src="components/angular-aria/angular-aria.js"></script>
+    <script src="components/angular-animate/angular-animate.js"></script>
+    <script src="components/hammerjs/hammer.js"></script>
+    <script src="components/angular-material/angular-material.js"></script>
+
+    <script src="app.js"></script>
+    <script src="controllers/main.js"></script>
+
     <meta charset="UTF-8">
     <title>Yap</title>
 </head>
 <body>
+
+<div ng-controller="MainCtrl">
+    <material-tabs selected="data.selectedIndex" center>
+        <material-tab label="Events"></material-tab>
+        <material-tab label="List"></material-tab>
+        <material-tab label="Subscribe"></material-tab>
+        <material-tab label="About"></material-tab>
+    </material-tabs>
+</div>
 
 </body>
 </html>
