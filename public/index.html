@@ -5,10 +5,10 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=yes"/>
     <link rel="stylesheet" type="text/css" href="components/angular-material/angular-material.css">
     <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+    <link rel="stylesheet" type="text/css" href="components/leaflet/dist/leaflet.css">
 
     <meta name="apple-mobile-web-app-capable" content="yes"/>
     <script type="text/javascript">document.write('<script src="//localhost:35729/livereload.js?snipver=1" type="text/javascript"><\/script>')</script>
-
 
 
     <script src="components/angular/angular.js"></script>
@@ -17,9 +17,9 @@
     <script src="components/angular-animate/angular-animate.js"></script>
     <script src="components/hammerjs/hammer.js"></script>
     <script src="components/angular-material/angular-material.js"></script>
-    <script src='https://maps.googleapis.com/maps/api/js?sensor=false'></script>
-    <script src="components/lodash/dist/lodash.underscore.js"></script>
-    <script src="components/angular-google-maps/dist/angular-google-maps.js"></script>
+
+    <script src="components/leaflet/dist/leaflet.js"></script>
+    <script src="components/angular-leaflet-directive/dist/angular-leaflet-directive.js"></script>
 
     <script src="app.js"></script>
 
@@ -42,19 +42,23 @@
             <h2 class="material-toolbar-tools">
                 <span>Yap!</span>
             </h2>
+
+
         </material-toolbar>
 
-        <material-tabs  selected="data.selectedIndex" center>
-            <material-tab class="yap-theme-primary" label="Events"></material-tab>
+        <material-tabs selected="data.selectedIndex">
+            <material-tab class="yap-theme-primary" label="Events">
+
+            </material-tab>
             <material-tab class="yap-theme-primary" label="List"></material-tab>
             <material-tab class="yap-theme-primary" label="Subscribe"></material-tab>
             <material-tab class="yap-theme-primary" label="About"></material-tab>
         </material-tabs>
 
-        {{ where }}
+
     </material-content>
 
-    <google-map center="map.center" zoom="map.zoom"></google-map>
+    <leaflet center="center" width="320px" height="568px"></leaflet>
 
     <material-content>
 
