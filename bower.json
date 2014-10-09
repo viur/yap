@@ -1,0 +1,20 @@
+{
+  "name": "yap",
+  "version": "0.0.1",
+  "homepage": "https://github.com/viur/yap",
+  "authors": [
+    "Pedro Almeida <pedro@viur.pt>",
+    "David Custódio <david@viur.pt>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-material": "~0.4.0"
+  }
+}
