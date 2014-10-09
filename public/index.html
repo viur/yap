@@ -21,12 +21,23 @@
 <body>
 
 <div ng-controller="MainCtrl">
-    <material-tabs selected="data.selectedIndex" center>
-        <material-tab label="Events"></material-tab>
-        <material-tab label="List"></material-tab>
-        <material-tab label="Subscribe"></material-tab>
-        <material-tab label="About"></material-tab>
-    </material-tabs>
+
+    <material-content>
+
+        <material-toolbar class="material-theme-dark">
+            <h2 class="material-toolbar-tools">
+                <span>Yap</span>
+            </h2>
+        </material-toolbar>
+
+        <material-tabs selected="data.selectedIndex" center>
+            <material-tab label="Events"></material-tab>
+            <material-tab label="List"></material-tab>
+            <material-tab label="Subscribe"></material-tab>
+            <material-tab label="About"></material-tab>
+        </material-tabs>
+
+    </material-content>
 </div>
 
 </body>
