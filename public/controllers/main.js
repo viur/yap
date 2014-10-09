@@ -1,13 +1,21 @@
 app.controller('MainCtrl', ['$scope', 'geoService', function ($scope, geoService) {
 
 
-    $scope.click = function () {
-        console.log('click');
-        geoService.getCurrentPosition().then(function (pos) {
+    geoService.getCurrentPosition().then(function (pos) {
 
-            console.log(pos);
+        console.log(pos);
 
-        })
-    }
+        $scope.where = 'lat:' + pos.coords.latitude + ' lon:' + pos.coords.longitude;
+
+
+    });
+
+    $scope.map = {
+        center: {
+            latitude: 45,
+            longitude: -73
+        },
+        zoom: 8
+    };
 
 }]);

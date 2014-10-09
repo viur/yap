@@ -14,6 +14,9 @@
     <script src="components/angular-animate/angular-animate.js"></script>
     <script src="components/hammerjs/hammer.js"></script>
     <script src="components/angular-material/angular-material.js"></script>
+    <script src='https://maps.googleapis.com/maps/api/js?sensor=false'></script>
+    <script src="components/lodash/dist/lodash.underscore.js"></script>
+    <script src="components/angular-google-maps/dist/angular-google-maps.js"></script>
 
     <script src="app.js"></script>
 
@@ -33,7 +36,7 @@
     <material-content>
         <material-toolbar class="material-theme-dark">
             <h2 class="material-toolbar-tools">
-                <span>Yaps!</span>
+                <span>Yap!</span>
             </h2>
         </material-toolbar>
 
@@ -44,7 +47,10 @@
             <material-tab label="About"></material-tab>
         </material-tabs>
 
+        {{ where }}
     </material-content>
+
+    <google-map center="map.center" zoom="map.zoom"></google-map>
 </div>
 
 </body>
