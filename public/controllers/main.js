@@ -1,4 +1,4 @@
-app.controller('MainCtrl', ['$scope', 'geoService', 'socket', function ($scope, geoService, socket) {
+app.controller('MainCtrl', ['$scope', 'geoService', 'socket', '$materialSidenav', function ($scope, geoService, socket,$materialSidenav) {
 
     $scope.center = {};
     geoService.getCurrentPosition().then(function (pos) {
@@ -45,6 +45,15 @@ app.controller('MainCtrl', ['$scope', 'geoService', 'socket', function ($scope, 
             notes: "Windy road"
         }
 
-    ]
+    ];
 
-}]);
+    $scope.toggleLeft = function() {
+        $materialSidenav('left').toggle();
+    };
+
+}]).controller('LeftCtrl', function($scope, $timeout, $materialSidenav) {
+    $scope.close = function() {
+        $materialSidenav('left').close();
+    };
+})
+;

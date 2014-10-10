@@ -9,13 +9,23 @@
 }
 
 
-.angular-google-map-container {
-    height: 400px;
-}
 
 .material-tile-left .face {
     border-radius: 30px;
     border: 1px solid #ddd;
     width: 48px;
     margin: 16px;
+}
+
+.yap-toolbar {
+    width: 100%;
+    height: 64px;
+    font-size: inherit;
+    font-weight: normal;
+    padding: 16px 16px 90px 80px;
+    margin: 0;
+}
+
+.yap-page-title {
+    padding-left: 15px;
 }

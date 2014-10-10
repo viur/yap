@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="components/angular-material/angular-material.css">
     <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
     <link rel="stylesheet" type="text/css" href="components/leaflet/dist/leaflet.css">
-
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <meta name="apple-mobile-web-app-capable" content="yes"/>
     <script type="text/javascript">document.write('<script src="//localhost:35729/livereload.js?snipver=1" type="text/javascript"><\/script>')</script>
 
@@ -41,49 +41,92 @@
     <material-content>
 
         <material-toolbar class="yap-theme-primary">
-            <h2 class="material-toolbar-tools">
-                <span>Yap!</span>
-            </h2>
-
+            <div class="material-toolbar-tools">
+                <span ng-click="toggleLeft()"><i class="fa fa-bars"></i></span>
+                <span flex="">Yap!</span>
+                <material-button>
+                    <button class="material-button-inner">
+                        <i class="fa fa-ellipsis-v"></i>
+                </button>
+                 </material-button>
+            </div>
 
         </material-toolbar>
 
+
         <material-tabs selected="data.selectedIndex">
             <material-tab class="yap-theme-primary" label="Events">
-
+                <leaflet center="center" width="320px" height="568px"></leaflet>
+                <material-button class="material-button-fab">
+                   <i class="fa fa-user fa-2x"></i>
+                </material-button>
             </material-tab>
-            <material-tab class="yap-theme-primary" label="List"></material-tab>
-            <material-tab class="yap-theme-primary" label="Subscribe"></material-tab>
-            <material-tab class="yap-theme-primary" label="About"></material-tab>
+            <material-tab class="yap-theme-primary" label="List">
+                <material-content class="material-content-padding" >
+
+                    <material-list>
+
+                        <material-item ng-repeat="item in todos">
+                            <material-item-content>
+                                <div class="material-tile-left">
+                                    <img ng-src="{{item.face}}" class="face" alt="{{item.category}}">
+                                </div>
+                                <div class="material-tile-content">
+                                    <h3>{{item.what}}</h3>
+                                    <h4>{{item.category}}</h4>
+                                    <p>
+                                        {{item.notes}}
+                                    </p>
+                                </div>
+                            </material-item-content>
+                        </material-item>
+
+                    </material-list>
+
+                </material-content>
+            </material-tab>
         </material-tabs>
 
 
     </material-content>
 
-    <leaflet center="center" width="320px" height="568px"></leaflet>
 
-    <material-content>
 
-        <material-list>
+    <material-sidenav class="material-sidenav-left material-whiteframe-z2" component-id="left">
 
-            <material-item ng-repeat="item in todos">
-                <material-item-content>
-                    <div class="material-tile-left">
-                        <img ng-src="{{item.face}}" class="face" alt="{{item.category}}">
-                    </div>
-                    <div class="material-tile-content">
-                        <h3>{{item.what}}</h3>
-                        <h4>{{item.category}}</h4>
-                        <p>
-                            {{item.notes}}
-                        </p>
-                    </div>
-                </material-item-content>
-            </material-item>
+        <material-toolbar class="material-theme-indigo">
+            <h1 class="material-toolbar-tools">Sidenav Left</h1>
+        </material-toolbar>
+        <material-content class="material-content-padding" ng-controller="LeftCtrl">
+            <material-list>
 
-        </material-list>
+                <material-item >
+                    <material-item-content>
+                        <div class="material-tile-left">
+                            <i class="fa fa-map-marker fa-2x"></i>
+                        </div>
+                        <div class="material-tile-content">
+                            <h3>Near Me</h3>
+                        </div>
+                    </material-item-content>
+                </material-item>
+                <material-item >
+                    <material-item-content>
+                        <div class="material-tile-left">
+                            <i class="fa fa-list fa-2x"></i>
+                        </div>
+                        <div class="material-tile-content">
+                            <h3>List</h3>
+                        </div>
+                    </material-item-content>
+                </material-item>
+            </material-list>
+            <material-button ng-click="close()" class="material-button-colored" hide-md>
+                Close Sidenav Left
+            </material-button>
+        </material-content>
 
-    </material-content>
+    </material-sidenav>
 </div>
 
 </body>
