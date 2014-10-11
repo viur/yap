@@ -46,7 +46,7 @@
         <material-toolbar class="yap-theme-primary">
             <div class="material-toolbar-tools">
                 <span ng-click="toggleLeft()"><i class="fa fa-bars"></i></span>
-                <span flex="">Yap!</span>
+                <span flex=""><img src="img/logo-xs-white.png"></span>
                 <material-button>
                     <button class="material-button-inner">
                         <i class="fa fa-ellipsis-v"></i>
@@ -74,7 +74,7 @@
                                 <h4>{{item.category}}
                                     <span class="pull-right">
                                         <i class="text-red fa fa-heart" ng-show="item.recomended"></i>
-                                        <i class="text-green fa fa-star" ng-show="item.sponsored"></i>
+                                        <i class="text-gold fa fa-star" ng-show="item.sponsored"></i>
                                     </span>
                                 </h4>
                                 <p>
@@ -111,7 +111,7 @@
     <material-sidenav class="material-sidenav-left material-whiteframe-z2" component-id="left">
 
         <material-toolbar class="material-theme-indigo">
-            <h1 class="material-toolbar-tools">Sidenav Left</h1>
+            <h1 class="material-toolbar-tools" ng-click="close()"><i class="fa fa-arrow-left"></i></h1>
         </material-toolbar>
         <material-content class="material-content-padding">
             <material-list>
@@ -137,9 +137,7 @@
                     </material-item-content>
                 </material-item>
             </material-list>
-            <material-button ng-click="close()" class="material-button-colored" hide-md>
-                Close Sidenav Left
-            </material-button>
+
         </material-content>
 
     </material-sidenav>
