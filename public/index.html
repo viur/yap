@@ -49,7 +49,13 @@
                 <span flex=""><img src="img/logo-xs-white.png"></span>
                 <material-button>
                     <button class="material-button-inner">
-                        <i class="fa fa-ellipsis-v"></i>
+                       <i class="fa fa-search"></i>
+                    </button>
+                </material-button>
+                <material-button>
+
+                    <button class="material-button-inner">
+                       <i class="fa fa-ellipsis-v"></i>
                     </button>
                 </material-button>
             </div>
@@ -58,7 +64,13 @@
 
         <material-content ng-show="showMap">
             <ui-gmap-google-map center="map.center" zoom="map.zoom" options="{mapTypeControlOptions:{mapTypeIds:[1]}}" refresh="true"></ui-gmap-google-map>
+            <section class="btn-yap" layout="vertical" layout-sm="horizontal" layout-align="center center">
+                <material-button class="material-button-fab yap-theme-primary">
+                    <i class="fa fa-plus fa-2x"></i>
+                </material-button>
+            </section>
         </material-content>
+        <!-- end map -->
         <material-content ng-hide="showMap">
             <material-content class="material-content-padding">
 
@@ -133,6 +145,17 @@
                         </div>
                         <div class="material-tile-content">
                             <h3>List</h3>
+                        </div>
+                    </material-item-content>
+                </material-item>
+            </material-list>
+            <material-item ng-click="show('list')">
+                    <material-item-content>
+                        <div class="material-tile-left">
+                            <i class="fa fa-user fa-2x"></i>
+                        </div>
+                        <div class="material-tile-content">
+                            <h3>Preferences</h3>
                         </div>
                     </material-item-content>
                 </material-item>
