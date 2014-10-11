@@ -31,3 +31,11 @@
 }
 
 .angular-google-map-container { height: 400px; }
+
+.text-green {
+    color: limegreen;
+}
+
+.text-red {
+    color: darkred;
+}

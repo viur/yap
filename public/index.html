@@ -75,6 +75,10 @@
 
                                 <p>
                                     {{item.notes}}
+                                    <span class="pull-right">
+                                    <i class="text-red fa fa-heart" ng-show="item.recomended"></i>
+                                    <i class="text-green fa fa-star" ng-show="item.sponsored"></i>
+                                        </span>
                                 </p>
                             </div>
                         </material-item-content>

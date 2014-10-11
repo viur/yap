@@ -37,24 +37,63 @@ app.controller('MainCtrl', ['$scope', 'geoService', 'socket', '$materialSidenav'
     $scope.todos = [
         {
             face: '/img/list/60.jpeg',
-            what: 'Party Hard!',
+            what: 'Erasmus Party!',
             category: 'Event',
             when: '3:08PM',
-            notes: "Elm Street no.13"
+            notes: "Bigorna Bar",
+            sponsored: true,
+            recomended: false
         },
         {
             face: '/img/list/60.jpeg',
             what: 'City tour',
             category: 'Tourism',
             when: '3:08PM',
-            notes: "City hall"
+            notes: "City hall",
+            sponsored: false,
+            recomended: true
         },
         {
             face: '/img/list/60.jpeg',
-            what: 'Cops!',
+            what: 'the Rolling Stones',
+            category: 'Music',
+            when: '3:08PM',
+            notes: "TAGV",
+            sponsored: false,
+            recomended: false
+        }, {
+            face: '/img/list/60.jpeg',
+            what: 'Académica vs Rio Ave',
+            category: 'Sports',
+            when: '3:08PM',
+            notes: "Estádio cidade de Coimbra",
+            sponsored: false,
+            recomended: false
+        },{
+            face: '/img/list/60.jpeg',
+            what: 'Amazing Street Artist',
+            category: 'Music',
+            when: '3:08PM',
+            notes: "Rua Ferreira Borges",
+            sponsored: false,
+            recomended: false
+        },{
+            face: '/img/list/60.jpeg',
+            what: '10% Discount - Pastéis de Nata',
+            category: 'Promotions',
+            when: '3:08PM',
+            notes: "Toledo",
+            sponsored: false,
+            recomended: false
+        },
+        {
+            face: '/img/list/60.jpeg',
+            what: 'Operação stop',
             category: 'Community',
             when: '3:08PM',
-            notes: "Windy road"
+            notes: "Praça da Republica",
+            sponsored: false,
+            recomended: false
         }
 
     ];
