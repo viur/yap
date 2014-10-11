@@ -1,22 +1,13 @@
 var app = angular.module('YapApp', ['ngRoute', 'ngAria', 'ngAnimate', 'ngMaterial', 'google-maps'.ns()]);
 
-app.config(['GoogleMapApiProvider'.ns(), '$routeProvider', '$locationProvider', function (GoogleMapApi, $routeProvider, $locationProvider) {
+app.config(['GoogleMapApiProvider'.ns(), '$routeProvider', '$locationProvider', function (GoogleMapApi, $locationProvider) {
 
     GoogleMapApi.configure({
         //    key: 'your api key',
         v: '3.17',
         libraries: 'weather,geometry,visualization'
     });
-    $routeProvider.when('/', {
-            templateUrl: 'index.html'
-          //  controller: 'MainCtrl'
-        }) .when('/map', {
-            templateUrl: 'views/map.html',
-            controller: 'BodyCtrl'
-        }) .when('/list', {
-            templateUrl: 'views/list.html',
-            controller: 'BodyCtrl'
-        });
+
     /*
 
 

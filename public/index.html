@@ -56,7 +56,34 @@
 
         </material-toolbar>
 
-        <div ng-view=""></div>
+        <material-content ng-show="showMap">
+            <ui-gmap-google-map center="map.center" zoom="map.zoom" options="{mapTypeControlOptions:{mapTypeIds:[1]}}" refresh="true"></ui-gmap-google-map>
+        </material-content>
+        <material-content ng-hide="showMap">
+            <material-content class="material-content-padding">
+
+                <material-list>
+
+                    <material-item ng-repeat="item in todos">
+                        <material-item-content>
+                            <div class="material-tile-left">
+                                <img ng-src="{{item.face}}" class="face" alt="{{item.category}}">
+                            </div>
+                            <div class="material-tile-content">
+                                <h3>{{item.what}}</h3>
+                                <h4>{{item.category}}</h4>
+
+                                <p>
+                                    {{item.notes}}
+                                </p>
+                            </div>
+                        </material-item-content>
+                    </material-item>
+
+                </material-list>
+
+            </material-content>
+        </material-content>
 
         <!--material-tabs selected="data.selectedIndex">
             <material-tab class="yap-theme-primary" label="Events" active="true">
@@ -73,16 +100,16 @@
 
     </material-content>
 
-
+<div  ng-controller="LeftCtrl">
     <material-sidenav class="material-sidenav-left material-whiteframe-z2" component-id="left">
 
         <material-toolbar class="material-theme-indigo">
             <h1 class="material-toolbar-tools">Sidenav Left</h1>
         </material-toolbar>
-        <material-content class="material-content-padding" ng-controller="LeftCtrl">
+        <material-content class="material-content-padding">
             <material-list>
 
-                <material-item>
+                <material-item ng-click="show('map')">
                     <material-item-content>
                         <div class="material-tile-left">
                             <i class="fa fa-map-marker fa-2x"></i>
@@ -92,7 +119,7 @@
                         </div>
                     </material-item-content>
                 </material-item>
-                <material-item>
+                <material-item ng-click="show('list')">
                     <material-item-content>
                         <div class="material-tile-left">
                             <i class="fa fa-list fa-2x"></i>
@@ -109,6 +136,8 @@
         </material-content>
 
     </material-sidenav>
+</div>
+
 
     <input type="file" accept="image/*" capture="camera">
 

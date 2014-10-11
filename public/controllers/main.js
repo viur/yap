@@ -64,12 +64,33 @@ app.controller('MainCtrl', ['$scope', 'geoService', 'socket', '$materialSidenav'
         $materialSidenav('left').toggle();
     };
 
-}]).
-    controller('BodyCtrl', function ($scope) {
+    $scope.showMap = true;
 
-    }).
-    controller('LeftCtrl', function ($scope, $timeout, $materialSidenav) {
+    $scope.$on('showMap', function(event, data) {
+       // console.log("event "+data)
+        $scope.showMap = data;
+        $scope.toggleLeft();
+    });
+
+}]).
+    controller('LeftCtrl', function ($scope,$rootScope, $materialSidenav) {
+
+
+        $scope.show = function(page){
+
+            console.log(page);
+            if(page == 'map'){
+
+                $rootScope.$broadcast('showMap', true);
+            }
+
+            if(page == 'list') {
+                $rootScope.$broadcast('showMap', false);
+            }
+        };
+
         $scope.close = function () {
+            console.log("closing");
             $materialSidenav('left').close();
         };
     })
