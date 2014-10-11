@@ -73,7 +73,37 @@
                 <material-button class="material-button-fab yap-theme-primary">
                     <i class="fa fa-plus fa-2x"></i>
                 </material-button>
+
+
             </section>
+            <material-list>
+
+                <material-item ng-repeat="item in todos">
+                    <material-item-content>
+                        <div class="material-tile-left">
+                            <img ng-src="{{item.face}}" class="face" alt="{{item.category}}">
+                        </div>
+                        <div class="material-tile-content">
+                            <h3>{{item.what}} <i ng-show="item.tickets"
+                                                 class="text-blue fa fa-ticket pull-right"></i></h3>
+                            <h4>{{item.category}}
+                                    <span class="pull-right">
+                                        <i class="text-red fa fa-heart" ng-show="item.recomended"></i>
+                                        <i class="text-gold fa fa-star" ng-show="item.sponsored"></i>
+                                    </span>
+                            </h4>
+
+                            <p>
+                                {{item.notes}}
+
+                            </p>
+
+
+                        </div>
+                    </material-item-content>
+                </material-item>
+
+            </material-list>
         </material-content>
         <!-- end map -->
         <material-content ng-hide="showMap">
