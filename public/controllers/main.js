@@ -42,7 +42,8 @@ app.controller('MainCtrl', ['$scope', 'geoService', 'socket', '$materialSidenav'
             when: '3:08PM',
             notes: "Bigorna Bar",
             sponsored: true,
-            recomended: false
+            recomended: false,
+            tickets: false
         },
         {
             face: '/img/list/60.jpeg',
@@ -51,7 +52,8 @@ app.controller('MainCtrl', ['$scope', 'geoService', 'socket', '$materialSidenav'
             when: '3:08PM',
             notes: "City hall",
             sponsored: false,
-            recomended: true
+            recomended: true,
+            tickets: false
         },
         {
             face: '/img/list/60.jpeg',
@@ -60,40 +62,45 @@ app.controller('MainCtrl', ['$scope', 'geoService', 'socket', '$materialSidenav'
             when: '3:08PM',
             notes: "TAGV",
             sponsored: false,
-            recomended: false
+            recomended: false,
+            tickets: true
         }, {
             face: '/img/list/60.jpeg',
-            what: 'Académica vs Rio Ave',
+            what: 'A.A.C x S.L.Benfica',
             category: 'Sports',
             when: '3:08PM',
-            notes: "Estádio cidade de Coimbra",
+            notes: "Coimbra Stadium",
             sponsored: false,
-            recomended: false
+            recomended: false,
+            tickets: true
         },{
             face: '/img/list/60.jpeg',
-            what: 'Amazing Street Artist',
+            what: 'Check this street Artist!',
             category: 'Music',
             when: '3:08PM',
-            notes: "Rua Ferreira Borges",
+            notes: "Ferreira Borges Street",
             sponsored: false,
-            recomended: false
+            recomended: false,
+            tickets: false
         },{
             face: '/img/list/60.jpeg',
             what: '10% Discount - Pastéis de Nata',
             category: 'Promotions',
             when: '3:08PM',
-            notes: "Toledo",
+            notes: "Portage Square",
             sponsored: false,
-            recomended: false
+            recomended: false,
+            tickets: false
         },
         {
             face: '/img/list/60.jpeg',
-            what: 'Operação stop',
+            what: 'Yard Sale',
             category: 'Community',
             when: '3:08PM',
-            notes: "Praça da Republica",
+            notes: "Back Street",
             sponsored: false,
-            recomended: false
+            recomended: false,
+            tickets: false
         }
 
     ];

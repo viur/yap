@@ -70,16 +70,19 @@
                                 <img ng-src="{{item.face}}" class="face" alt="{{item.category}}">
                             </div>
                             <div class="material-tile-content">
-                                <h3>{{item.what}}</h3>
-                                <h4>{{item.category}}</h4>
-
+                                <h3>{{item.what}} <i ng-show="item.tickets" class="text-blue fa fa-ticket pull-right"></i></h3>
+                                <h4>{{item.category}}
+                                    <span class="pull-right">
+                                        <i class="text-red fa fa-heart" ng-show="item.recomended"></i>
+                                        <i class="text-green fa fa-star" ng-show="item.sponsored"></i>
+                                    </span>
+                                </h4>
                                 <p>
                                     {{item.notes}}
-                                    <span class="pull-right">
-                                    <i class="text-red fa fa-heart" ng-show="item.recomended"></i>
-                                    <i class="text-green fa fa-star" ng-show="item.sponsored"></i>
-                                        </span>
+
                                 </p>
+
+
                             </div>
                         </material-item-content>
                     </material-item>
