@@ -57,7 +57,14 @@
         </material-toolbar>
 
         <material-content ng-show="showMap">
-            <ui-gmap-google-map center="map.center" zoom="map.zoom" options="{mapTypeControlOptions:{mapTypeIds:[1]}}" refresh="true"></ui-gmap-google-map>
+            <ui-gmap-google-map center="map.center" zoom="map.zoom" options="{mapTypeControlOptions:{mapTypeIds:[1]}}"
+                                refresh="true">
+
+                <ui-gmap-marker ng-repeat="marker in markers" coords="marker.coords" options="marker.options"
+                                events="marker.events"
+                                idkey="marker.id">
+                </ui-gmap-marker>
+            </ui-gmap-google-map>
         </material-content>
         <material-content ng-hide="showMap">
             <material-content class="material-content-padding">
@@ -70,13 +77,15 @@
                                 <img ng-src="{{item.face}}" class="face" alt="{{item.category}}">
                             </div>
                             <div class="material-tile-content">
-                                <h3>{{item.what}} <i ng-show="item.tickets" class="text-blue fa fa-ticket pull-right"></i></h3>
+                                <h3>{{item.what}} <i ng-show="item.tickets"
+                                                     class="text-blue fa fa-ticket pull-right"></i></h3>
                                 <h4>{{item.category}}
                                     <span class="pull-right">
                                         <i class="text-red fa fa-heart" ng-show="item.recomended"></i>
                                         <i class="text-green fa fa-star" ng-show="item.sponsored"></i>
                                     </span>
                                 </h4>
+
                                 <p>
                                     {{item.notes}}
 
@@ -107,43 +116,43 @@
 
     </material-content>
 
-<div  ng-controller="LeftCtrl">
-    <material-sidenav class="material-sidenav-left material-whiteframe-z2" component-id="left">
+    <div ng-controller="LeftCtrl">
+        <material-sidenav class="material-sidenav-left material-whiteframe-z2" component-id="left">
 
-        <material-toolbar class="material-theme-indigo">
-            <h1 class="material-toolbar-tools">Sidenav Left</h1>
-        </material-toolbar>
-        <material-content class="material-content-padding">
-            <material-list>
+            <material-toolbar class="material-theme-indigo">
+                <h1 class="material-toolbar-tools">Sidenav Left</h1>
+            </material-toolbar>
+            <material-content class="material-content-padding">
+                <material-list>
 
-                <material-item ng-click="show('map')">
-                    <material-item-content>
-                        <div class="material-tile-left">
-                            <i class="fa fa-map-marker fa-2x"></i>
-                        </div>
-                        <div class="material-tile-content">
-                            <h3>Near Me</h3>
-                        </div>
-                    </material-item-content>
-                </material-item>
-                <material-item ng-click="show('list')">
-                    <material-item-content>
-                        <div class="material-tile-left">
-                            <i class="fa fa-list fa-2x"></i>
-                        </div>
-                        <div class="material-tile-content">
-                            <h3>List</h3>
-                        </div>
-                    </material-item-content>
-                </material-item>
-            </material-list>
-            <material-button ng-click="close()" class="material-button-colored" hide-md>
-                Close Sidenav Left
-            </material-button>
-        </material-content>
+                    <material-item ng-click="show('map')">
+                        <material-item-content>
+                            <div class="material-tile-left">
+                                <i class="fa fa-map-marker fa-2x"></i>
+                            </div>
+                            <div class="material-tile-content">
+                                <h3>Near Me</h3>
+                            </div>
+                        </material-item-content>
+                    </material-item>
+                    <material-item ng-click="show('list')">
+                        <material-item-content>
+                            <div class="material-tile-left">
+                                <i class="fa fa-list fa-2x"></i>
+                            </div>
+                            <div class="material-tile-content">
+                                <h3>List</h3>
+                            </div>
+                        </material-item-content>
+                    </material-item>
+                </material-list>
+                <material-button ng-click="close()" class="material-button-colored" hide-md>
+                    Close Sidenav Left
+                </material-button>
+            </material-content>
 
-    </material-sidenav>
-</div>
+        </material-sidenav>
+    </div>
 
 
     <input type="file" accept="image/*" capture="camera">
