@@ -35,10 +35,17 @@
 .text-green {
     color: darkseagreen;
 }
+.text-gold{
+    color: gold;
+}
 
 .text-red {
     color: indianred;
 }
 .text-blue {
     color: cornflowerblue;
+}
+
+.btn-yap {
+    margin-top: -30px;
 }
