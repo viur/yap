@@ -27,11 +27,11 @@ app.controller('MainCtrl', ['$scope', 'geoService', 'socket', '$materialSidenav'
             zoom: 15
         };
     });
-
+/*
     socket.on('init', function (data) {
         $scope.name = data.name;
         $scope.users = data.users;
-    });
+    }); */
 
 
     $scope.todos = [
@@ -65,6 +65,9 @@ app.controller('MainCtrl', ['$scope', 'geoService', 'socket', '$materialSidenav'
     };
 
 }]).
+    controller('BodyCtrl', function ($scope) {
+
+    }).
     controller('LeftCtrl', function ($scope, $timeout, $materialSidenav) {
         $scope.close = function () {
             $materialSidenav('left').close();

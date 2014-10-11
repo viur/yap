@@ -3,6 +3,7 @@
 <head lang="en">
 
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=yes"/>
+    <link rel="shortcut icon" href="favicon.png">
     <link rel="stylesheet" type="text/css" href="components/angular-material/angular-material.css">
     <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
     <link rel="stylesheet" type="text/css" href="components/leaflet/dist/leaflet.css">
@@ -55,8 +56,9 @@
 
         </material-toolbar>
 
+        <div ng-view=""></div>
 
-        <material-tabs selected="data.selectedIndex">
+        <!--material-tabs selected="data.selectedIndex">
             <material-tab class="yap-theme-primary" label="Events" active="true">
                 <ui-gmap-google-map center="map.center" zoom="map.zoom" options="{mapTypeControlOptions:{mapTypeIds:[1]}}" refresh="true"></ui-gmap-google-map>
                 <material-button class="material-button-fab">
@@ -64,31 +66,9 @@
                 </material-button>
             </material-tab>
             <material-tab class="yap-theme-primary" label="List">
-                <material-content class="material-content-padding">
 
-                    <material-list>
-
-                        <material-item ng-repeat="item in todos">
-                            <material-item-content>
-                                <div class="material-tile-left">
-                                    <img ng-src="{{item.face}}" class="face" alt="{{item.category}}">
-                                </div>
-                                <div class="material-tile-content">
-                                    <h3>{{item.what}}</h3>
-                                    <h4>{{item.category}}</h4>
-
-                                    <p>
-                                        {{item.notes}}
-                                    </p>
-                                </div>
-                            </material-item-content>
-                        </material-item>
-
-                    </material-list>
-
-                </material-content>
             </material-tab>
-        </material-tabs>
+        </material-tabs-->
 
 
     </material-content>
