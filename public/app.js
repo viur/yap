@@ -1,6 +1,13 @@
-var app = angular.module('YapApp', ['ngRoute', 'ngAria', 'ngAnimate', 'ngMaterial', 'leaflet-directive']);
+var app = angular.module('YapApp', ['ngRoute', 'ngAria', 'ngAnimate', 'ngMaterial', 'google-maps'.ns()]);
 
-app.config(function ($routeProvider, $locationProvider) {
+app.config(['GoogleMapApiProvider'.ns(), function (GoogleMapApi, $routeProvider, $locationProvider) {
+
+    GoogleMapApi.configure({
+        //    key: 'your api key',
+        v: '3.17',
+        libraries: 'weather,geometry,visualization'
+    });
+
     /* $routeProvider
      .when('/', {
      templateUrl: 'book.html',
@@ -21,4 +28,4 @@ app.config(function ($routeProvider, $locationProvider) {
 
     // configure html5 to get links working on jsfiddle
     //$locationProvider.html5Mode(true);
-});
+}]);

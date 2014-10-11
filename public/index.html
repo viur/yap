@@ -18,8 +18,10 @@
     <script src="components/hammerjs/hammer.js"></script>
     <script src="components/angular-material/angular-material.js"></script>
 
-    <script src="components/leaflet/dist/leaflet.js"></script>
-    <script src="components/angular-leaflet-directive/dist/angular-leaflet-directive.js"></script>
+    <script src='components/lodash/dist/lodash.js'></script>
+    <script src='components/bluebird/js/browser/bluebird.js'></script>
+    <script src='components/angular-google-maps/dist/angular-google-maps.js'></script>
+
     <script src="libs/socket.io.js"></script>
 
     <script src="app.js"></script>
@@ -47,22 +49,22 @@
                 <material-button>
                     <button class="material-button-inner">
                         <i class="fa fa-ellipsis-v"></i>
-                </button>
-                 </material-button>
+                    </button>
+                </material-button>
             </div>
 
         </material-toolbar>
 
 
         <material-tabs selected="data.selectedIndex">
-            <material-tab class="yap-theme-primary" label="Events">
-                <leaflet center="center" width="320px" height="568px"></leaflet>
+            <material-tab class="yap-theme-primary" label="Events" active="true">
+                <ui-gmap-google-map center="map.center" zoom="map.zoom" options="{mapTypeControlOptions:{mapTypeIds:[1]}}" refresh="true"></ui-gmap-google-map>
                 <material-button class="material-button-fab">
-                   <i class="fa fa-user fa-2x"></i>
+                    <i class="fa fa-user fa-2x"></i>
                 </material-button>
             </material-tab>
             <material-tab class="yap-theme-primary" label="List">
-                <material-content class="material-content-padding" >
+                <material-content class="material-content-padding">
 
                     <material-list>
 
@@ -74,6 +76,7 @@
                                 <div class="material-tile-content">
                                     <h3>{{item.what}}</h3>
                                     <h4>{{item.category}}</h4>
+
                                     <p>
                                         {{item.notes}}
                                     </p>
@@ -91,7 +94,6 @@
     </material-content>
 
 
-
     <material-sidenav class="material-sidenav-left material-whiteframe-z2" component-id="left">
 
         <material-toolbar class="material-theme-indigo">
@@ -100,7 +102,7 @@
         <material-content class="material-content-padding" ng-controller="LeftCtrl">
             <material-list>
 
-                <material-item >
+                <material-item>
                     <material-item-content>
                         <div class="material-tile-left">
                             <i class="fa fa-map-marker fa-2x"></i>
@@ -110,7 +112,7 @@
                         </div>
                     </material-item-content>
                 </material-item>
-                <material-item >
+                <material-item>
                     <material-item-content>
                         <div class="material-tile-left">
                             <i class="fa fa-list fa-2x"></i>
@@ -127,6 +129,15 @@
         </material-content>
 
     </material-sidenav>
+
+    <input type="file" accept="image/*" capture="camera">
+
+    <material-input-group ng-disabled="user.isLocked">
+        <label for="i1">FirstName</label>
+        <material-input id="i1" ng-model="user.firstName"></material-input>
+    </material-input-group>
+
+
 </div>
 
 </body>
